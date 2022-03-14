@@ -62,7 +62,7 @@ class MyPromise {
       onFULFILLED = typeof onFULFILLED === 'function' ? onFULFILLED : () => {};
       onREJECTED = typeof onREJECTED === 'function' ? onREJECTED : () => {};
 
-      // then 里面也是会存在待定状态的
+      // then 里面也是会存在待定状态的?!
       if (this.status === MyPromise.PENDDING) {
         this.resolveCallbacks.push(onFULFILLED);
         this.rejectCallbacks.push(onREJECTED);
@@ -111,3 +111,4 @@ myPromise.then(
 );
 
 console.log('第三步');
+
